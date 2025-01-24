@@ -1,0 +1,236 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #4a90e2;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 440px;
+    padding: 2em;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #333;
+    margin-top: 0;
+}
+
+.form-section {
+    margin-bottom: 2em;
+}
+
+.input-group {
+    margin-bottom: 1em;
+    text-align: left;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #555;
+}
+
+input[type="text"], input[type="password"], input[type="date"], input[type="tel"], input[type="email"] {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.delete-icon, .view-timing-icon {
+    cursor: pointer;
+    font-size: 1.2em;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.delete-icon {
+    color: #e74c3c;
+}
+
+.view-timing-icon {
+    color: #3498db;
+}
+
+input[type="password"]:hover {
+    cursor: pointer;
+}
+
+.action {
+    cursor: pointer;
+    color: #3498db;
+    text-decoration: underline;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+button {
+    padding: 0.75em 1.5em;
+    border: none;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3a78c2;
+}
+button:disabled {
+    background-color: #ccc;
+    color: #666; /* Gray text */
+    cursor: not-allowed;
+    opacity: 0.6; /* Slight transparency for disabled effect */
+}
+
+#doneButton {
+    background-color: #40bf5a;
+}
+#doneButton:hover {
+    background-color: #297d3a;
+}
+#doneButton:disabled {
+    background-color: #ccc;
+    color: #333; /* Gray text */
+}
+
+#passwordLength, #keystrokeLength {
+    font-weight: bold;
+    color: #3498db; /* Example color */
+    padding-left: 0.5em;
+}
+
+
+.message {
+    margin-top: 1em;
+    font-size: 0.9em;
+}
+
+.message.success {
+    color: #2ecc71;
+}
+
+.message.error {
+    color: #e74c3c;
+}
+
+.message.info {
+    color: #3498db;
+}
+
+#intervalGraph {
+    width: 100%;
+    max-width: 400px;
+    height: 100px;
+    margin-top: 1em;
+}
+
+.gauge-container {
+    width: 100%;
+    height: 1rem;
+    background-color: #e0e0e0;
+    margin: 5px 0;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gauge-bar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.gauge-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    line-height: 1rem;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#treeVisualization {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 2em;
+    overflow-x: auto;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1em;
+    }
+
+    button {
+        padding: 0.5em 1em;
+    }
+}
+
