@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Runner with Debug</title>
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Results</h1>
+    <pre id="output"></pre>
+
+<script>
+  // Capture the original console.log
+  const originalConsoleLog = console.log;
+  const outputElement = document.getElementById('output');
+
+  // Override console.log
+  console.log = function(...args) {
+    // Call the original console.log
+    originalConsoleLog.apply(console, args);
+
+    // Append to the <pre> element
+    outputElement.textContent += args.map(arg => 
+      typeof arg === 'object' ? JSON.stringify(arg, null, 2) : arg
+    ).join(' ') + '\n';
+  };
+</script>
+
+<script type="module" src="test.js"></script>
+ 
+</body>
+</html>
+
