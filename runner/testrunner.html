@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Runner with Debug</title>
+    <title>JS Test Runner with Debug</title>
     <style>
         pre {
             background-color: #f4f4f4;
@@ -16,7 +16,12 @@
     </style>
 </head>
 <body>
-    <h1>Test Results</h1>
+    <h2>Javascript Runner</h2>
+
+<input type="text" id="scriptUrl" placeholder="Enter script URL" value="hello.js">
+<button onclick="loadScript()">Load Script</button>
+  
+    <h2>Output</h2>
     <pre id="output"></pre>
 
 <script>
@@ -34,9 +39,30 @@
       typeof arg === 'object' ? JSON.stringify(arg, null, 2) : arg
     ).join(' ') + '\n';
   };
+
+function loadScript() {
+  const url = document.getElementById('scriptUrl').value;
+  if (!url) return;
+
+  const script = document.createElement('script');
+  script.src = url;
+  script.type = 'text/javascript';
+
+  script.onload = function() {
+    console.debug('Script loaded successfully');
+  };
+
+  script.onerror = function() {
+    outputElement.textContent = 'Error loading script: ' + url;
+    console.error('Error loading script');
+  };
+
+  document.body.appendChild(script);
+}
+  
 </script>
 
-<script type="module" src="test.js"></script>
+<!-- script type="module" src="test.js"></script -->
  
 </body>
 </html>
